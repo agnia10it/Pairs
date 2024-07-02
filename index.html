@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра в пары</title>
+  <script defer src="main.js"> </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      createGame();
+    });
+
+  </script>
+  <style>
+    .container {
+      width: 1000px;
+      margin: 50px auto;
+    }
+
+    .label {
+      display: inline-block;
+      margin-right: 20px;
+      font-size: 32px;
+    }
+
+    .number-input {
+      padding: 5px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+    .btn {
+      margin-bottom: 50px;
+      padding: 20px 50px;
+      font-size: 32px;
+      border-radius: 15px;
+      background-color: lightgreen;
+    }
+
+    .win-btn {
+      display: none;
+      margin-top: 50px;
+    }
+
+    #win-text {
+      display: none;
+      text-align: center;
+      font-size: 50px;
+      color: red;
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      list-style-type: none;
+    }
+
+    .list__elem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #aaa;
+      color: transparent;
+    }
+
+    .open {
+      background-color: aqua;
+      color: #000;
+    }
+
+    .yes {
+      background-color: forestgreen;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game" class="container">
+    <label class="label">
+      Введите чётное количество карточек в ряду:
+      <input class="number-input" type="number" id="row-count" min="2" max="10" value="4" step="2">
+    </label>
+    <button class="btn start-btn" id="start-btn">Начать игру</button>
+
+    <div id="game-board" class="game-board"></div>
+    <h2 id="win-text">Вы победили!</h2>
+    <button class="btn win-btn" id="win-btn">Сыграть ещё раз</button>
+  </div>
+</body>
+
+</html>
